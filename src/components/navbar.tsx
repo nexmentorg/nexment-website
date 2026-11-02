@@ -93,7 +93,7 @@ function ThemeToggle() {
       type="button"
       onClick={() => setTheme(dark ? "light" : "dark")}
       aria-label={`Switch to ${dark ? "light" : "dark"} mode`}
-      className="flex size-9 shrink-0 cursor-pointer items-center justify-center rounded-full"
+      className="text-muted-foreground hover:bg-accent hover:text-foreground flex size-9 shrink-0 cursor-pointer items-center justify-center rounded-full transition-colors"
     >
       <i className={`fa-solid ${dark ? "fa-sun" : "fa-moon"} text-base`} aria-hidden="true" />
     </button>
@@ -108,7 +108,7 @@ function SocialLinks() {
         target="_blank"
         rel="noreferrer"
         aria-label="GitHub"
-        className="flex size-9 cursor-pointer items-center justify-center rounded-full"
+        className="text-muted-foreground hover:bg-accent hover:text-foreground flex size-9 cursor-pointer items-center justify-center rounded-full transition-colors"
       >
         <i className="fa-brands fa-github text-lg" aria-hidden="true" />
       </a>
@@ -117,7 +117,7 @@ function SocialLinks() {
         target="_blank"
         rel="noreferrer"
         aria-label="X"
-        className="flex size-9 cursor-pointer items-center justify-center rounded-full"
+        className="text-muted-foreground hover:bg-accent hover:text-foreground flex size-9 cursor-pointer items-center justify-center rounded-full transition-colors"
       >
         <i className="fa-brands fa-x-twitter text-base" aria-hidden="true" />
       </a>
@@ -160,13 +160,17 @@ export default function Navbar() {
 
   return (
     <>
-      <header className="text-foreground fixed top-0 z-999 w-full">
-        <div className="flex h-16 w-full items-center justify-between px-3 sm:px-4">
+      <header className="fixed inset-x-0 top-0 z-50 px-3 pt-3 sm:px-4 sm:pt-4">
+        <div className="border-border/60 bg-background/75 mx-auto flex h-16 w-full max-w-7xl items-center justify-between rounded-2xl border px-3 shadow-lg shadow-black/[0.04] backdrop-blur-2xl backdrop-saturate-150 sm:px-5">
           <Brand />
 
           <nav className="hidden items-center gap-7 lg:flex">
             {navigation.map((item) => (
-              <Link key={item.href} href={item.href} className="cursor-pointer text-sm font-medium">
+              <Link
+                key={item.href}
+                href={item.href}
+                className="text-muted-foreground hover:text-foreground cursor-pointer text-sm font-medium transition-colors"
+              >
                 {item.label}
               </Link>
             ))}
@@ -185,7 +189,7 @@ export default function Navbar() {
               onClick={() => setOpen(true)}
               aria-label="Open navigation"
               aria-expanded={open}
-              className="flex size-10 cursor-pointer items-center justify-center rounded-full"
+              className="hover:bg-accent flex size-10 cursor-pointer items-center justify-center rounded-full transition-colors"
             >
               <i className="fa-solid fa-bars text-lg" aria-hidden="true" />
             </button>
@@ -195,8 +199,10 @@ export default function Navbar() {
 
       <div
         onClick={() => setOpen(false)}
-        className={`fixed inset-0 z-50 bg-black/40 transition-opacity duration-200 lg:hidden ${
-          open ? "visible opacity-100" : "invisible opacity-0"
+        className={`bg-background/45 fixed inset-0 z-[9998] backdrop-blur-xl backdrop-saturate-150 transition-all duration-300 lg:hidden ${
+          open
+            ? "pointer-events-auto visible opacity-100"
+            : "pointer-events-none invisible opacity-0"
         }`}
         aria-hidden="true"
       />
@@ -204,7 +210,7 @@ export default function Navbar() {
       <aside
         aria-label="Mobile navigation"
         aria-hidden={!open}
-        className={`bg-background text-foreground border-border fixed inset-y-0 right-0 z-[9999] flex w-[min(85vw,360px)] flex-col border-l p-6 transition-transform duration-200 ease-out lg:hidden ${
+        className={`bg-background/95 text-foreground border-border fixed inset-y-0 right-0 z-[9999] flex w-[min(85vw,360px)] flex-col border-l p-6 shadow-2xl shadow-black/20 backdrop-blur-2xl transition-transform duration-300 ease-out lg:hidden ${
           open ? "translate-x-0" : "translate-x-full"
         }`}
       >
@@ -215,7 +221,7 @@ export default function Navbar() {
             onClick={() => setOpen(false)}
             aria-label="Close navigation"
             tabIndex={open ? 0 : -1}
-            className="flex size-10 cursor-pointer items-center justify-center rounded-full"
+            className="hover:bg-accent flex size-10 cursor-pointer items-center justify-center rounded-full transition-colors"
           >
             <i className="fa-solid fa-xmark text-xl" aria-hidden="true" />
           </button>
@@ -228,7 +234,7 @@ export default function Navbar() {
               href={item.href}
               onClick={() => setOpen(false)}
               tabIndex={open ? 0 : -1}
-              className="cursor-pointer rounded-lg py-3 text-base font-medium"
+              className="hover:text-primary cursor-pointer rounded-lg py-3 text-base font-medium transition-colors"
             >
               {item.label}
             </Link>

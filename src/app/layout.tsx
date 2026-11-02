@@ -4,8 +4,8 @@ import { cn } from "@/lib/utils";
 import "@fortawesome/fontawesome-free/css/all.min.css";
 import "./globals.css";
 import { WebsiteSchema } from "@/components/seo/website-schema";
-import { ThemeProvider } from "@/components/theme-provider";
-import { ThemeShortcut } from "@/components/theme-shortcut";
+import { ThemeProvider } from "@/components/themes/theme-provider";
+import { ThemeShortcut } from "@/components/themes/theme-shortcut";
 import { SpeedInsights } from "@vercel/speed-insights/next";
 import { Analytics } from "@vercel/analytics/next";
 
