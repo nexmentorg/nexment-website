@@ -1,0 +1,199 @@
+@import "tailwindcss";
+
+:root {
+  --bg: oklch(98% 0.008 85);
+  --surface: oklch(94% 0.012 85);
+  --primary: oklch(42% 0.075 105);
+  --secondary: oklch(89% 0.018 85);
+  --accent: oklch(52% 0.085 105);
+
+  --bg-foreground: oklch(18% 0.012 85);
+  --bg-border: oklch(88% 0.012 85);
+  --bg-hover: oklch(96% 0.012 85);
+  --bg-hover-border: oklch(82% 0.018 85);
+  --bg-hover-text: oklch(12% 0.012 85);
+
+  --surface-foreground: oklch(20% 0.012 85);
+  --surface-border: oklch(85% 0.012 85);
+  --surface-hover: oklch(91% 0.018 85);
+  --surface-hover-border: oklch(78% 0.02 85);
+  --surface-hover-text: oklch(14% 0.012 85);
+
+  --primary-foreground: oklch(97% 0.008 85);
+  --primary-border: oklch(38% 0.07 105);
+  --primary-hover: oklch(48% 0.085 105);
+  --primary-hover-border: oklch(34% 0.065 105);
+  --primary-hover-text: oklch(100% 0 0);
+
+  --secondary-foreground: oklch(24% 0.012 85);
+  --secondary-border: oklch(82% 0.018 85);
+  --secondary-hover: oklch(84% 0.025 85);
+  --secondary-hover-border: oklch(75% 0.025 85);
+  --secondary-hover-text: oklch(16% 0.012 85);
+
+  --accent-foreground: oklch(97% 0.008 85);
+  --accent-border: oklch(45% 0.075 105);
+  --accent-hover: oklch(58% 0.095 105);
+  --accent-hover-border: oklch(40% 0.07 105);
+  --accent-hover-text: oklch(100% 0 0);
+
+  --text: oklch(15% 0.012 85);
+  --text-secondary: oklch(34% 0.012 85);
+  --text-muted: oklch(52% 0.012 85);
+
+  --font-head: var(--font-heading-source);
+  --font-body: var(--font-body-source);
+  --font-cursive: var(--font-cursive-source);
+  --font-code: var(--font-code-source);
+}
+
+.dark {
+  --bg: oklch(5% 0.008 85);
+  --surface: oklch(9% 0.012 85);
+  --primary: oklch(58% 0.085 105);
+  --secondary: oklch(14% 0.012 85);
+  --accent: oklch(63% 0.095 105);
+
+  --bg-foreground: oklch(94% 0.008 85);
+  --bg-border: oklch(18% 0.012 85);
+  --bg-hover: oklch(8% 0.012 85);
+  --bg-hover-border: oklch(25% 0.018 85);
+  --bg-hover-text: oklch(98% 0.008 85);
+
+  --surface-foreground: oklch(92% 0.008 85);
+  --surface-border: oklch(21% 0.015 85);
+  --surface-hover: oklch(13% 0.018 85);
+  --surface-hover-border: oklch(29% 0.02 85);
+  --surface-hover-text: oklch(98% 0.008 85);
+
+  --primary-foreground: oklch(97% 0.008 85);
+  --primary-border: oklch(38% 0.07 105);
+  --primary-hover: oklch(48% 0.085 105);
+  --primary-hover-border: oklch(34% 0.065 105);
+  --primary-hover-text: oklch(100% 0 0);
+
+  --secondary-foreground: oklch(88% 0.008 85);
+  --secondary-border: oklch(23% 0.015 85);
+  --secondary-hover: oklch(18% 0.018 85);
+  --secondary-hover-border: oklch(31% 0.02 85);
+  --secondary-hover-text: oklch(98% 0.008 85);
+
+  --accent-foreground: oklch(7% 0.008 85);
+  --accent-border: oklch(63% 0.09 105);
+  --accent-hover: oklch(69% 0.105 105);
+  --accent-hover-border: oklch(72% 0.11 105);
+  --accent-hover-text: oklch(5% 0.008 85);
+
+  --text: oklch(95% 0.008 85);
+  --text-secondary: oklch(76% 0.01 85);
+  --text-muted: oklch(55% 0.012 85);
+
+  --font-head: var(--font-heading-source);
+  --font-body: var(--font-body-source);
+  --font-cursive: var(--font-cursive-source);
+  --font-code: var(--font-code-source);
+}
+
+@theme inline {
+  --color-bg: var(--bg);
+  --color-surface: var(--surface);
+  --color-primary: var(--primary);
+  --color-secondary: var(--secondary);
+  --color-accent: var(--accent);
+
+  --color-bg-foreground: var(--bg-foreground);
+  --color-bg-border: var(--bg-border);
+  --color-bg-hover: var(--bg-hover);
+  --color-bg-hover-border: var(--bg-hover-border);
+  --color-bg-hover-text: var(--bg-hover-text);
+
+  --color-surface-foreground: var(--surface-foreground);
+  --color-surface-border: var(--surface-border);
+  --color-surface-hover: var(--surface-hover);
+  --color-surface-hover-border: var(--surface-hover-border);
+  --color-surface-hover-text: var(--surface-hover-text);
+
+  --color-primary-foreground: var(--primary-foreground);
+  --color-primary-border: var(--primary-border);
+  --color-primary-hover: var(--primary-hover);
+  --color-primary-hover-border: var(--primary-hover-border);
+  --color-primary-hover-text: var(--primary-hover-text);
+
+  --color-secondary-foreground: var(--secondary-foreground);
+  --color-secondary-border: var(--secondary-border);
+  --color-secondary-hover: var(--secondary-hover);
+  --color-secondary-hover-border: var(--secondary-hover-border);
+  --color-secondary-hover-text: var(--secondary-hover-text);
+
+  --color-accent-foreground: var(--accent-foreground);
+  --color-accent-border: var(--accent-border);
+  --color-accent-hover: var(--accent-hover);
+  --color-accent-hover-border: var(--accent-hover-border);
+  --color-accent-hover-text: var(--accent-hover-text);
+
+  --color-text: var(--text);
+  --color-text-secondary: var(--text-secondary);
+  --color-text-muted: var(--text-muted);
+
+  --font-head: var(--font-head);
+  --font-body: var(--font-body);
+  --font-cursive: var(--font-cursive);
+  --font-code: var(--font-code);
+}
+
+html,
+body {
+  background: var(--bg);
+  color: var(--text);
+  font-family: var(--font-body);
+  scrollbar-width: none;
+  text-rendering: optimizeLegibility;
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
+  color-scheme: light;
+}
+
+html.dark {
+  color-scheme: dark;
+}
+
+*,
+*::before,
+*::after {
+  box-sizing: border-box;
+  border-color: var(--border);
+}
+
+h1,
+h2,
+h3,
+h4,
+h5,
+h6 {
+  color: var(--text);
+  font-family: var(--font-head);
+}
+
+::selection {
+  background: var(--primary);
+  color: var(--primary-foreground);
+}
+
+::-webkit-scrollbar {
+  width: 0;
+  height: 0;
+}
+
+@media (prefers-reduced-motion: reduce) {
+  html {
+    scroll-behavior: auto;
+  }
+
+  *,
+  *::before,
+  *::after {
+    animation-duration: 0.01ms !important;
+    animation-iteration-count: 1 !important;
+    transition-duration: 0.01ms !important;
+  }
+}
